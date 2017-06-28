@@ -1,12 +1,15 @@
 # Author: OMKAR PATHAK
 
+# Script to help download problem statements from codechef
+
 import urllib.request, bs4, re, os, time
 
 problems = ['school', 'easy', 'medium', 'hard', 'challenge', 'extcontest']
 
-for problem in problems:
+for idx, problem in enumerate(problems):
     try:
-        os.chdir('..')
+        if idx == 1:
+            os.chdir('..')
         os.mkdir(problem)
         if os.path.exists(problem):
             os.chdir(problem)

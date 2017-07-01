@@ -2,6 +2,9 @@
 
 This is the script that I have used to download the codechef problem statements.
 
+Omkar Pathak,<br />
+Pune, Maharashtra, India.<br />
+
 ## Requirements
 
 * **Beautiful Soup Module**
@@ -22,7 +25,7 @@ This is the script that I have used to download the codechef problem statements.
 
 # Working
 
-* Each problem statement get downloaded and is written in a text file. The file is named according to the code name given by the codechef.
+* Each problem statement gets downloaded and is written in a text file. The file is named according to the code name given by the codechef.
 
 ![Codechef-Problem-Statement-Downloader](CodechefResult1.png "Codechef-Problem-Statement-Downloader")
 
@@ -33,3 +36,7 @@ This is the script that I have used to download the codechef problem statements.
 * Problem statements are arranged according to their level. Beginner (School), easy , medium, hard, challenge, peer (extcontest) are the levels defined by codechef
 
 ![Codechef-Problem-Statement-Downloader](CodechefResult3.png "Codechef-Problem-Statement-Downloader")
+
+# Todo
+- [] Add the progess bar for downloads.
+- [] Improve the overall execution using multitasking.

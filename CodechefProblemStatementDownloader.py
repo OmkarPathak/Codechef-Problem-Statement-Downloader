@@ -2,7 +2,12 @@
 
 # Script to help download problem statements from codechef
 
-import urllib.request, bs4, re, os, time
+import urllib.request, bs4, re, os, time, sys
+
+# Function showing the progress of the download count
+def progress(count = ''):
+    sys.stdout.write('%s\r' % (count))
+    sys.stdout.flush()
 
 problems = ['school', 'easy', 'medium', 'hard', 'challenge', 'extcontest']
 
@@ -29,6 +34,8 @@ for idx, problem in enumerate(problems):
 
             # Find specific href tags that have 'problems/' in them
             result = soup.find_all(href = re.compile('problems/'))
+
+            downloaded = 0
             for i in range(15, len(result)):
                 checkResult = result[i]['href']
                 try:
@@ -46,9 +53,15 @@ for idx, problem in enumerate(problems):
                     for i in range(7, len(check) - 18):
                         f.write(check[i].text + '\n')
                     f.close()
+
+                    # Display the progress
+                    progress(('Downloaded ' + str(downloaded + 1) + ' of ' + str(len(result) - 15)))
+                    downloaded += 1
                 except urllib.error.HTTPError:
                     # This exception has to bbe caught, else you might get an error saying Service temporarily unavailable
                     time.sleep(2)
+            sys.stdout.write(']')
+            print('Download Complete for ', problem, ' level')
         else:
             pass
     except FileExistsError:

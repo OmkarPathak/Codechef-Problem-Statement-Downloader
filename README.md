@@ -38,5 +38,5 @@ Pune, Maharashtra, India.<br />
 ![Codechef-Problem-Statement-Downloader](CodechefResult3.png "Codechef-Problem-Statement-Downloader")
 
 # Todo
-- [] Add the progess bar for downloads.
-- [] Improve the overall execution using multitasking.
+- [X] Add the progess bar for downloads.
+- [ ] Improve the overall execution using multitasking.
